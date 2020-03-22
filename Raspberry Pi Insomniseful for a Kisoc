@@ -1,0 +1,35 @@
+Within this new file enter the following lines of code, you can incorporate it how ever you like with your own script(s). 
+
+#!/bin/bash
+
+The very first line defines what the command line interpreter (CLI) should use to try and execute this file. 
+This is useful for cases where you don’t want to have to specify the specific application required every time you run the script.
+
+xset s noblank
+xset s off
+xset -dpms
+
+These three lines are rather important as they help us stop the Raspberry Pi’s display power management system 
+from kicking in and blanking out the screen. Basically, these three commands set the current X-session not to 
+blank out the screensaver and then disables the screensaver altogether. The third line disables the entire 
+“display power management system” meaning that the desktop interface should never blank out the screen.
+
+One of Linux's strengths as an operating system is its ability to be configured and tweaked to suit your tastes. 
+Using the command line allows you to issue powerful commands that are unavailable to other OS users, and use of 
+the command line is almost a necessity to get the most out of your Linux distribution. For example, sometimes 
+you may want to run a script or a command whenever you start your Linux machine. There is more than one way to do this.
+
+1. Put the command in your crontab file. The crontab file in Linux is a daemon that performs user-edited tasks at 
+specific times and events. To edit the file, open a terminal and type "sudo crontab -e" to open your crontab file 
+in the default text editor. At the first available line, type "@reboot xxxx", where "xxxx" is the command you wish 
+to run. Save the file and exit.
+
+2. Put a script containing the command in your /etc directory. Create a script such as "startup.sh" using your favorite
+text editor. Save the file in your /etc/init.d/ directory. Change the permissions of the script (to make it executable) 
+by typing "chmod +x /etc/init.d/mystartup.sh".
+
+3. Edit the /rc.local script using your text editor. On Fedora systems, this script is located in /etc/rc.d/rc.local, 
+and in Ubuntu, it is located in /etc/rc.local. Once you add the commands you wish to run -- making sure you do so 
+as root -- save the file and exit. The commands will run after the next start-up.
+
+Now personally, I love Banana Cream Pi, but I don't think I can compete with Raspberry pi. 3 to the 14 people!
