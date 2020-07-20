@@ -1,2 +1,2 @@
-# Linux-Display-Sleeping-issue
-This will stop Linux from going to sleep
+# Raspberry PI-Display-Sleeping-issue
+This will stop Raspberry PI from going to sleep
